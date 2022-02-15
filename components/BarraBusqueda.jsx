@@ -17,6 +17,7 @@ class BarraBusqueda extends React.Component {
         <form className="ui form" onSubmit={this.onFormSubmit} >
           <div className="field">
             <label>Busqueda de videos</label>
+            
             <input type="text" value={this.state.term} onChange={e => this.setState({ term: e.target.value })} />
           </div>
         </form>

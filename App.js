@@ -1,8 +1,8 @@
 import React from 'react';
 import youtube from "./api/youtube";
-import SearchBar from "./components/BarraBusqueda";
-import VideoList from "./components/VideoList";
-import VideoDetail from "./components/VideoDetail";
+import BarraBusqueda from "./components/BarraBusqueda";
+import ListaVideo from "./components/ListaVideo";
+import InfoVideo from "./components/InfoVideo";
 
 class App extends React.Component {
   state = {
@@ -23,14 +23,14 @@ class App extends React.Component {
     const { videos, selectedVideo } = this.state;
     return (
       <div className="ui container" style={{ marginTop: "20px" }}>
-        <SearchBar onSubmit={this.onSearchSubmit} />
+        <BarraBusqueda onSubmit={this.onSearchSubmit} />
         <div className="ui grid">
           <div className="ui row">
             <div className="eleven wide column" >
-              {selectedVideo && <VideoDetail video={selectedVideo} />}
+              {selectedVideo && <InfoVideo video={selectedVideo} />}
             </div>
             <div className="five wide column" >
-              <VideoList videos={videos} onVideoSelect={this.onSelectVideo} />
+              <ListaVideo videos={videos} onVideoSelect={this.onSelectVideo} />
             </div>
           </div>
         </div>
